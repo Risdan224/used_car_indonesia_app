@@ -5,7 +5,7 @@ import predict
 
 def get_user_input(df):
     car_maker = st.selectbox("Manufacturer:", used_car.vehicle_make.unique())
-    car_type = st.selectbox("Model/Type:", used_car[used_car.Make == car_maker].vehicle_model.unique())
+    car_type = st.selectbox("Model/Type:", used_car[used_car.vehicle_make == car_maker].vehicle_model.unique())
     car_body_type = st.selectbox("Body Type:", used_car[used_car.vehicle_model == car_type].vehicle_body_type.unique())
     car_gear_type = st.selectbox("Gear Type:", used_car.vehicle_transmission.unique())
     car_year = st.number_input("Year of Production:", value=2000, step=1)
