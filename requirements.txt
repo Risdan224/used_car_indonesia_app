@@ -1,0 +1,5 @@
+scikit-learn==1.0.2
+category-encoders==2.6.3
+xgboost==2.0.2
+pandas
+numpy
