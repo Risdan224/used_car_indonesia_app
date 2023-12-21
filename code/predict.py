@@ -1,5 +1,11 @@
 from pathlib import Path
 import pickle
+import pandas as pd
+import numpy as np
+import sklearn
+import category_encoder as ce
+import xgboost
+
 
 def predict(df):
     # Load the model and scaler from the saved file
