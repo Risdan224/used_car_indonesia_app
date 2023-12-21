@@ -3,7 +3,7 @@ import pickle
 import pandas as pd
 import numpy as np
 import sklearn
-import category_encoder as ce
+import category_encoders as ce
 import xgboost
 
 
