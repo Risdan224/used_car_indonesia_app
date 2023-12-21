@@ -2,9 +2,24 @@ from pathlib import Path
 import pickle
 import pandas as pd
 import numpy as np
-import sklearn
+from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import OneHotEncoder
 import category_encoders as ce
-import xgboost
+from category_encoders import BinaryEncoder
+from sklearn.pipeline import Pipeline
+from sklearn.impute import SimpleImputer
+from sklearn.preprocessing import RobustScaler
+from sklearn.model_selection import train_test_split, cross_val_score, RandomizedSearchCV, GridSearchCV, KFold
+
+import category_encoders as ce
+from sklearn.preprocessing import OneHotEncoder, PolynomialFeatures, KBinsDiscretizer
+from sklearn.compose import ColumnTransformer
+from sklearn.pipeline import Pipeline
+
+from sklearn.linear_model import LinearRegression
+from sklearn.ensemble import RandomForestRegressor
+from xgboost.sklearn import XGBRegressor
+from sklearn.compose import TransformedTargetRegressor
 
 
 def predict(df):
