@@ -9,7 +9,7 @@ def get_user_input(df):
     car_body_type = st.selectbox("Body Type:", used_car[used_car.vehicle_model == car_type].vehicle_body_type.unique())
     car_gear_type = st.selectbox("Gear Type:", used_car.vehicle_transmission.unique())
     car_year = st.number_input("Year of Production:", value=2000, step=1)
-    car_mileage = st.number_input("Mileage:", value=0, step=1)
+    car_mileage = st.number_input("Mileage:", value=10000, step=1)
 
     user_data = pd.DataFrame({
         'vehicle_model':[car_type],
@@ -43,7 +43,7 @@ if __name__=="__main__":
     # display predictions
     if st.button("Predict Price"):
         used_car_price = round(predict.predict(user_data)[0], 2)  # get prediction
-        formatted_X = "{:.2f}".format(used_car_price)
+        formatted_X = "{:.0f}".format(used_car_price)
         st.write(f"**Estimated car price : Rp. {formatted_X}**")
         st.write("This price calculated using machine learning model, can be used to estimate used-car price for selling or buying.")
 
