@@ -44,7 +44,7 @@ if __name__=="__main__":
     if st.button("Predict Price"):
         used_car_price = round(predict.predict(user_data)[0], 2)  # get prediction
         formatted_X = "{:.2f}".format(used_car_price)
-        st.write(f"**Estimated car price : Rp.** {formatted_X}")
+        st.write(f"**Estimated car price : Rp. {formatted_X}**")
         st.write("This price calculated using machine learning model, can be used to estimate used-car price for selling or buying.")
 
     st.write("Created by: Risdan")
