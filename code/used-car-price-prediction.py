@@ -35,16 +35,16 @@ if __name__=="__main__":
     st.image(str(Path(__file__).parents[1] /'img/mobilbekas.png'), width=700)
 
     st.write("""  
-            This application predicts a used-car price based on some features. Please input your car features below here:
+            This application predicts a used-car price based on the manufacturer, model, body-type, gear-type, year and mileage. The prediction is calculated using the XGBoost machine learning model. The model has a CV score of 13% (MAPE) and test scores of 14% (MAPE) and 87.56% (R2). Therefore, when using prediction results, consider these CV and test values. To get your prediction, please input your car features below here:
              """)
     
     user_data = get_user_input(used_car)
 
     # display predictions
     if st.button("Predict Price"):
-        used_car_price = round(predict.predict(user_data)[0], 2)  # get predicitions
+        used_car_price = round(predict.predict(user_data)[0], 2)  # get prediction
         formatted_X = "{:.2f}".format(used_car_price)
-        st.write(f"**Estimated car price :** {formatted_X} RSA")
+        st.write(f"**Estimated car price : Rp.** {formatted_X}")
         st.write("This price calculated using machine learning model, can be used to estimate used-car price for selling or buying.")
 
-    st.write("Created by: Risdan Kristori")
+    st.write("Created by: Risdan")
